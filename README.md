@@ -1,5 +1,5 @@
-install steps:
-requirements:
+install steps::
+requirements::
     using the source code from Hang Zhang
     using cuda>9.2
     using pytorch>=1.0
@@ -23,7 +23,7 @@ requirements:
 
      pip install torch-encoding
      
-  test:
+  test::
   python
   import encoding
   If import success, then you can use it. The most common issue is about the ninja. Make sure you have cuda>9.0, cuda9.2 or 10.0 may help solve the problem.
