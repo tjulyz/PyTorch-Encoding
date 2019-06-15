@@ -9,6 +9,9 @@
   * Install Anaconda and install python 3.6.5::
      
      conda create -n encnet
+     
+     source activate encnet
+     
      conda install python==3.6.5
 
   * Install ninja::
