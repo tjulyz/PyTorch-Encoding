@@ -1,7 +1,9 @@
 * install steps::
 * requirements::
     using the source code from Hang Zhang
+    
     using cuda>9.2
+    
     using pytorch>=1.0
     
   * Install Anaconda and install python 3.6.5::
