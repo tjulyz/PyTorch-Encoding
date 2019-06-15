@@ -1,3 +1,37 @@
+install steps:
+requirements:
+    using the source code from Hang Zhang
+    using cuda>9.2
+    using pytorch>=1.0
+    
+  * Install Anaconda and install python 3.6.5::
+     
+     conda create -n encnet
+     conda install python==3.6.5
+
+  * Install ninja::
+
+     wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip
+     sudo unzip ninja-linux.zip -d /usr/local/bin/
+     sudo update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force
+
+  * Install PyTorch::
+
+     conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
+
+  * Install this package::
+
+     pip install torch-encoding
+     
+  test:
+  python
+  import encoding
+  If import success, then you can use it. The most common issue is about the ninja. Make sure you have cuda>9.0, cuda9.2 or 10.0 may help solve the problem.
+
+    
+
+
+
 # PyTorch-Encoding
 
 created by [Hang Zhang](http://hangzh.com/)
