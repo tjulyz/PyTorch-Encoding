@@ -8,7 +8,7 @@ This is one successful installation.
   
   * conda create -n enc_cu10 python=3.6.7 # create a new virtual env
   
-  * conda install torch==1.0.0 torchvision -c pytorch
+  * conda install torch==1.0.0 torchvision -c pytorch  (don't worry if the torch is built with cu90)
   
   * Install ninja::
 
@@ -40,7 +40,9 @@ This is one successful installation.
    
    I recommond you add this head file in operator.cpp : #include <pybind11/pybind11.h>
    
-   Then exit python and >> pip uninstall torch-encoding
+   Then exit python and 
+   
+   >> pip uninstall torch-encoding
    
    remove the build folder and torch_encoding.egg-info folder, then reinstall as
    
