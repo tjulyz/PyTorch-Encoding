@@ -6,34 +6,35 @@ This is one successful installation.
 
 2. steps:
   
-  * conda create -n enc_cu10 python=3.6.7 # create a new virtual env
+  *  >> conda create -n enc_cu10 python=3.6.7 # create a new virtual env
   
-  * conda install torch==1.0.0 torchvision -c pytorch  (don't worry if the torch is built with cu90)
+  *  >> conda install torch==1.0.0 torchvision -c pytorch  (don't worry if the torch is built with cu90)
   
   * Install ninja::
 
-     wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip
+     >> wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip
 
-     sudo unzip ninja-linux.zip -d /usr/local/bin/
+     >> sudo unzip ninja-linux.zip -d /usr/local/bin/
      
-     sudo update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force
+     >> sudo update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force
      
    * using >> which ninja        #to locate which ninja is being installed, the author recommond ninja1.8.2
    
-   #but when you install torch, the ninja 1.9.0 is installed in this env, you can remove it by>> rm ....
+   #but when you install torch, the ninja 1.9.0 is installed in this env, you can remove it by >> rm ....
    
    
-   *  git clone https://github.com/zhanghang1989/PyTorch-Encoding.git
+   * >> git clone https://github.com/zhanghang1989/PyTorch-Encoding.git
    
    * >> source activate enc_cu10
    
-   *  >> cd Pytorch-Encoding
+   * >> cd Pytorch-Encoding
    
       find the ./encoding/lib/gpu/ and change all the #include<torch/extension.h> in the .cu file to #include <torch/serialize/tensor.h>
       
    * >> python setup.py install
    
    * >> python
+   
    * >> import encoding
    
    If it is ok, then you can use it. But if you get an error about operator can not be complied to operator.o, and this error is about  'PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {'
@@ -52,7 +53,7 @@ This is one successful installation.
    
    Good luck!
 
-
+######################################################################################################################3
 
 
 
