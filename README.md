@@ -1,4 +1,64 @@
+MANY TIMES!
+
+This is one successful installation.
+
+1. my env: cuda10.0 ubuntu16.04 conda 
+
+2. steps:
+  
+  * conda create -n enc_cu10 python=3.6.7 # create a new virtual env
+  
+  * conda install torch==1.0.0 torchvision -c pytorch
+  
+  * Install ninja::
+
+     wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip
+
+     sudo unzip ninja-linux.zip -d /usr/local/bin/
+     
+     sudo update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force
+     
+   * using >> which ninja        #to locate which ninja is being installed, the author recommond ninja1.8.2
+   
+   #but when you install torch, the ninja 1.9.0 is installed in this env, you can remove it by>> rm ....
+   
+   
+   *  git clone https://github.com/zhanghang1989/PyTorch-Encoding.git
+   
+   * >> source activate enc_cu10
+   
+   *  >> cd Pytorch-Encoding
+   
+      find the ./encoding/lib/gpu/ and change all the #include<torch/extension.h> in the .cu file to #include <torch/serialize/tensor.h>
+      
+   * >> python setup.py install
+   
+   * >> python
+   * >> import encoding
+   
+   If it is ok, then you can use it. But if you get an error about operator can not be complied to operator.o, and this error is about  'PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {'
+   
+   I recommond you add this head file in operator.cpp : #include <pybind11/pybind11.h>
+   
+   Then exit python and >> pip uninstall torch-encoding
+   
+   remove the build folder and torch_encoding.egg-info folder, then reinstall as
+   
+   >> python setup.py install
+   
+   Have a try for import encoding
+   
+   Good luck!
+
+
+
+
+
+
+The following steps are recommonded by the author of Pytorch-encoding. I cannot install it correctly. But you can have a try!
+
 * install steps::
+
 * requirements::
     using the source code from Hang Zhang
     
