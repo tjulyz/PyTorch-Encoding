@@ -39,7 +39,7 @@ This is one successful installation.
    
    If it is ok, then you can use it. But if you get an error about operator can not be complied to operator.o, and this error is about  'PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {'
    
-   I recommond you add this head file in operator.cpp : #include <pybind11/pybind11.h>
+   I recommond you add this head file in operator.cpp : #include <pybind11/pybind11.h> #include <torch/csrc/THP_export.h> #include <torch/csrc/utils/pybind.h>
    
    Then exit python and 
    
